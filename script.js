@@ -1,5 +1,5 @@
 const { spawn } = require('child_process');
-const nodeCommand = spawn('./a.out');
+const nodeCommand = spawn('gnome-terminal');
 
 nodeCommand.stdout.on('data', (data) => {
   console.log(`stdout: ${data}`);
@@ -15,22 +15,22 @@ nodeCommand.on('close', (code) => {
   }
 });
 
-// const childProcess = require('child_process');
+const childProcess = require('child_process');
 
-// function execProcess(command, args) {
+function execProcess(command, args) {
     
-//     childProcess.exec(command, args, function(error, stdout, stderr){
+    childProcess.exec(command, args, function(error, stdout, stderr){
 
-//         console.log(`stdout: ${stdout} `);
-//         console.log(`stderr: ${stderr} `);
+        console.log(`stdout: ${stdout} `);
+        console.log(`stderr: ${stderr} `);
 
-//         if(error !== null) {
-//             console.log(`error: ${error}`)
-//         }
-//     });
-// }
+        if(error !== null) {
+            console.log(`error: ${error}`)
+        }
+    });
+}
 
-// // execProcess('php -S localhost:4000');
+execProcess('php -S localhost:4000');
 
 // function spawnProcess(command, args) {
     
