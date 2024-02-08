@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-$jsonData = file_get_contents('english.json');
+$jsonData = file_get_contents('data.json');
 $data     = json_decode($jsonData, true); // true - означает, что мы хотим получить массив вместо объекта
 echo "<h2>English words</h2><br>";
 
