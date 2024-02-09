@@ -1,15 +1,15 @@
 <?php
-$handle = fopen("english.json", "r");
-$content = fread($handle, filesize("english.json"));
+$handle = fopen("data.json", "r");
+$content = fread($handle, filesize("data.json"));
 fclose($handle);
 
 // Декодируем прочитанный текст в массив
 $data = json_decode($content, true);
 echo "Введите слово: ";
 $word = fgets(STDIN);
-$i = 0;
-while ($i < 2) {
-  echo "Введите предложение и перевод: ";
+$i = 1;
+while ($i <= 2) {
+  echo "Введите предложение[$i] и перевод: ";
   $phrase[$i] = fgets(STDIN);
   $i++;
 }
